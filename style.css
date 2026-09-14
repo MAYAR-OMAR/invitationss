@@ -1,0 +1,611 @@
+/* RESET & BASIC SETUP */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+html, body {
+    min-height: 100dvh;
+    background-color: #fcfbf7 !important;
+    font-family: 'Georgia', serif;
+    color: #2c2c2c;
+    overflow-x: hidden;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* SECTION 1: Video Gate */
+#video-gate-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    z-index: 9999;
+    background-color: #fcfbf7 !important;
+    cursor: pointer;
+    pointer-events: auto !important;
+}
+
+#gate-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* SECTION 2: Main Content Setup */
+#main-content {
+    position: relative;
+    width: 100%;
+    min-height: 100dvh;
+    height: auto !important;
+    background-color: transparent !important;
+}
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.card-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    box-sizing: border-box;
+    background-color: transparent !important;
+}
+
+.card-overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+/* TYPOGRAPHY & ARABIC FIXES */
+.subtitle-top {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #2b2321;
+    margin-bottom: 5px;
+}
+
+.names {
+    font-family: 'Amiri', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.2;
+}
+
+.ampersand {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #2b2321;
+    margin: 5px 0;
+}
+
+.invitation-text {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #2b2321;
+    max-width: 90%;
+    margin: 15px auto;
+    line-height: 1.6;
+}
+
+.invitation-text, .subtitle-top, .typewriter-text {
+    font-family: 'Amiri', 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    letter-spacing: normal !important;
+    word-spacing: normal !important;
+    -webkit-font-feature-settings: "liga" 1, "calt" 1;
+    font-feature-settings: "liga" 1, "calt" 1;
+}
+
+.date-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.date {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    letter-spacing: 2px;
+}
+
+.line {
+    width: 45px;
+    height: 2px;
+    background-color: #2b2321;
+}
+
+.diamond-divider {
+    font-size: 1.3rem;
+    margin: 10px 0;
+}
+
+/* TYPEWRITER ANIMATION */
+.typewriter-text, .wedding-card {
+    direction: rtl;
+    text-align: center;
+}
+
+.typewriter-text {
+    min-height: 1.2em;
+    display: inline-block;
+    white-space: pre-wrap;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+.typewriter-text::after {
+    content: '|';
+    opacity: 1;
+    animation: blink 0.7s infinite;
+}
+
+.typewriter-text.finished::after {
+    display: none;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* SECTION 3: COUNTDOWN */
+.countdown-section {
+    width: 100%;
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(245, 240, 230, 0.85), rgba(225, 215, 198, 0.9)), 
+                url('../assets/bg-pillars.jpg') center/cover no-repeat fixed;
+    padding: 40px 20px;
+}
+
+.countdown-overlay {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    padding: 40px 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+.countdown-title {
+    font-family: 'Georgia', serif;
+    font-size: 1.6rem;
+    font-style: italic;
+    color: #3a322c;
+    letter-spacing: 1px;
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 30px 0;
+}
+
+.time-box {
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(212, 187, 152, 0.5);
+    border-radius: 12px;
+    padding: 12px 10px;
+    min-width: 65px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.time-number {
+    display: block;
+    font-family: 'Georgia', serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #4a3e35;
+}
+
+.time-label {
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+    color: #7a6e65;
+    margin-top: 4px;
+    display: block;
+}
+
+.time-separator {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #6b5c50;
+}
+
+.countdown-subtitle {
+    font-family: 'Georgia', serif;
+    font-size: 0.95rem;
+    letter-spacing: 3px;
+    color: #5c4e43;
+    margin-top: 10px;
+}
+
+/* SECTION 4: QURAN & WELCOME */
+.quran-section {
+    width: 100%;
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('./photo1.png') center/cover no-repeat fixed;
+    padding: 40px 20px;
+}
+
+.quran-card {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 28px;
+    padding: 45px 30px;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    direction: rtl;
+}
+
+.quran-text {
+    font-family: 'Amiri', serif;
+    font-size: 1.35rem;
+    line-height: 2.2;
+    color: #2b231d;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.arabic-divider {
+    color: #a3825e;
+    font-size: 0.9rem;
+    margin: 20px 0;
+    letter-spacing: 2px;
+}
+
+.welcome-message {
+    font-family: 'Amiri', serif;
+    font-size: 1.1rem;
+    line-height: 2;
+    color: #4a3e35;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+/* SECTION 5: LOCATION */
+.location-section {
+    width: 100%;
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(245, 240, 230, 0.9), rgba(225, 215, 198, 0.95)),
+                url('../assets/bg-pillars.jpg') center/cover no-repeat fixed;
+    padding: 40px 20px;
+}
+
+.location-card {
+    background: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px dashed #c2a682;
+    border-radius: 28px;
+    padding: 35px 25px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.location-title {
+    font-family: 'Georgia', serif;
+    font-size: 2.2rem;
+    font-style: italic;
+    color: #4a3e35;
+    margin-bottom: 5px;
+}
+
+.dots-divider {
+    color: #d4bb98;
+    letter-spacing: 4px;
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+}
+
+.venue-image-container {
+    width: 100%;
+    height: 180px;
+    border-radius: 18px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.venue-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hall-name {
+    font-family: 'Georgia', serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: #3a322c;
+    margin-bottom: 4px;
+}
+
+.hotel-name {
+    font-family: 'Georgia', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #6b5c50;
+    margin-bottom: 6px;
+}
+
+.city-name {
+    font-family: 'Georgia', serif;
+    font-size: 0.9rem;
+    color: #8c7e72;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+.location-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #a3825e, #8c6a46);
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    padding: 12px 32px;
+    border-radius: 30px;
+    box-shadow: 0 6px 18px rgba(163, 130, 94, 0.35);
+    transition: all 0.3s ease;
+}
+
+.location-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(163, 130, 94, 0.5);
+    background: linear-gradient(135deg, #8c6a46, #735332);
+}
+
+/* SECTION 6: CLOSING CARD */
+.closing-section {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #4a3e35;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 25px;
+}
+
+.monogram-img {
+    width: 170px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.hands-img {
+    width: 210px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.names-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.names-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.name-text {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.name-en {
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.divider {
+    width: 1px;
+    height: 22px;
+    background-color: #2b2321;
+    opacity: 0.6;
+}
+
+.verse-img {
+    width: 370px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.verse-text {
+    font-family: 'Amiri', 'Noto Naskh Arabic', serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+/* SECTION 6: CLOSING CARD */
+.closing-section {
+    width: 100%;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 25px;
+    padding: 40px 20px;
+    /* نفس خلفية السكشن اللي فوقه بالضبط */
+    background: linear-gradient(135deg, rgba(245, 240, 230, 0.9), rgba(225, 215, 198, 0.95)),
+                url('../assets/bg-pillars.jpg') center/cover no-repeat fixed;
+    box-sizing: border-box;
+}
+/* SECTION 4: QURAN & WELCOME */
+.quran-section {
+    width: 100%;
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* شيلنا fixed واستبدلناها بـ scroll عشان تظبط على الموبايل */
+    background: url('./photo1.png') center/cover no-repeat scroll;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+.open-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    padding: 14px 32px;
+    font-family: 'Georgia', serif;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    color: #4a3e35;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(212, 187, 152, 0.8);
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.open-btn:hover {
+    background: rgba(255, 255, 255, 0.95);
+    transform: translate(-50%, -50%) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+/* كلاس الاختفاء التدريجي للزر */
+.fade-out {
+    opacity: 0 !important;
+    transform: translate(-50%, -50%) scale(0.9) !important;
+    transition: opacity 0.4s ease, transform 0.4s ease !important;
+    pointer-events: none !important;
+}
+.open-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    padding: 14px 28px;
+    font-family: 'Amiri', 'Georgia', serif;
+    font-size: 1.1rem;
+    color: #4a3e35;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(212, 187, 152, 0.9);
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* كلاس الاختفاء الفوري للزرار عند الضغط */
+.open-btn.fade-out {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: translate(-50%, -50%) scale(0.9) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
