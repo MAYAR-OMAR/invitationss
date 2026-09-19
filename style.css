@@ -12,7 +12,7 @@ html {
 
 html, body {
     min-height: 100dvh;
-    background-color: #fcfbf7 !important;
+    background-color: transparent !important;
     font-family: 'Georgia', serif;
     color: #2c2c2c;
     overflow-x: hidden;
@@ -591,21 +591,223 @@ html, body {
 
 
 
+.doves-container {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.doves-img {
+    width: 300px; /* 7gm l-soura, momkn tgbryha aw ts8ryha bzbt */
+    height: auto;
+    opacity: 0.85;
+    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.1));
+}
+
+.countdown-time-text {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+.countdown-overlay {
+    background: transparent !important; /* شيلنا اللون البيج أو الخلفية خالص */
+    border: none !important;            /* شيلنا أي إطار خارجي */
+    box-shadow: none !important;        /* شيلنا الـ Shadow اللي كان مدي شكل الكارت */
+    backdrop-filter: none !important;   /* لو فيه أي تأثير بلور على الخلفية */
+}
+
+
+.closing-section {
+    text-align: center;
+    padding: 30px 15px 40px 15px; /* مساحات صغيرة فوق وتحت عشان تظهر كجزء مش صفحة كاملة */
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin-top: 20px;
+}
+
+.closing-content {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.closing-flowers-top {
+    margin-bottom: 15px;
+}
+
+.closing-img {
+    width: 100%; /* عشان تاخد عرض مناسب متناسق فوق الكلام */
+    max-width: 320px;
+    height: auto;
+    opacity: 0.9;
+}
+
+.closing-text {
+    font-family: 'Amiri', serif;
+    font-size: 1.25rem;
+    color: #4a4a4a;
+    margin-bottom: 12px;
+    direction: rtl;
+}
+
+.couple-names {
+    font-family: 'Amiri', 'Aref Ruqaa', serif;
+    font-size: 1.8rem;
+    color: #3b2f2f;
+    letter-spacing: 1px;
+    font-weight: bold;
+    direction: rtl;
+}
+
+.closing-section-bg {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding-top: 50px;
+    background: transparent !important;
+    overflow: hidden;
+}
+
+.closing-content-over {
+    position: relative;
+    z-index: 2; /* عشان الكلام يظهر فوق الصورة وي版的 واضح */
+    margin-bottom: 20px;
+}
+
+.closing-text {
+    font-family: 'Amiri', serif;
+    font-size: 1.3rem;
+    color: #4a4a4a;
+    margin-bottom: 10px;
+    direction: rtl;
+}
+
+.couple-names {
+    font-family: 'Amiri', 'Aref Ruqaa', serif;
+    font-size: 1.9rem;
+    color: #3b2f2f;
+    letter-spacing: 1px;
+    font-weight: bold;
+    direction: rtl;
+}
+
+.closing-image-wrapper {
+    width: 100%;
+    line-height: 0; /* عشان تلغي أي فراغات تحت الصورة */
+}
+
+.full-width-lamps {
+    width: 100%; /* تاخد مساحتها كاملة من اليمين للشمال */
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.closing-section-bg {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding-top: 40px;
+    background-color:rgba(255, 255, 255, 0.45) ;
+    overflow: hidden;
+}
+
+.closing-content-over {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 25px;
+}
+
+.closing-text {
+    font-family: 'Amiri', serif;
+    font-size: 1.3rem;
+    color: #4a4a4a;
+    margin-bottom: 10px;
+    direction: rtl;
+}
+
+.couple-names {
+    font-family: 'Amiri', 'Aref Ruqaa', serif;
+    font-size: 1.9rem;
+    color: #3b2f2f;
+    letter-spacing: 1px;
+    font-weight: bold;
+    direction: rtl;
+}
+
+.closing-image-wrapper {
+    width: 100%;
+    line-height: 0;
+}
+
+.full-width-lamps {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
 
 
 
 
 
 
+.quran-section {
+    width: 100%;
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* ظبطناها تاخد نفس خلفية الـ Gradient والأعمدة زي باقي الموقع بالظبط */
+    background: linear-gradient(135deg, rgba(245, 240, 230, 0.9), rgba(225, 215, 198, 0.95)),
+                url('../assets/bg-pillars.jpg') center/cover no-repeat fixed;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}.closing-section-bg {
+    position: relative;
+    width: 100%;
+    height: auto !important; /* مساحة على قد المحتوى بس */
+    min-height: auto !important;
+    text-align: center;
+    padding: 30px 0 0 0; /* مسافة فوق بسيطة ومن غير مسافات تحت */
+    background: linear-gradient(135deg, rgba(245, 240, 230, 0.9), rgba(225, 215, 198, 0.95)),
+                url('../assets/bg-pillars.jpg') center/cover no-repeat fixed !important;
+    overflow: hidden;
+    box-sizing: border-box;
+}
 
+.closing-content-over {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 25px; /* مسافة صغيرة بين الكلام والصورة اللي تحتها مباشرة */
+}
 
+.closing-text {
+    font-family: 'Amiri', serif;
+    font-size: 1.3rem;
+    color: #4a4a4a;
+    margin-bottom: 8px;
+    direction: rtl;
+}
 
+.couple-names {
+    font-family: 'Amiri', 'Aref Ruqaa', serif;
+    font-size: 1.9rem;
+    color: #3b2f2f;
+    letter-spacing: 1px;
+    font-weight: bold;
+    direction: rtl;
+}
 
+.closing-image-wrapper {
+    width: 100%;
+    line-height: 0;
+    margin: 0;
+}
 
-
-
-
-
-
-
-
+.full-width-lamps {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}

@@ -138,35 +138,26 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Countdown Timer Logic
-const targetDate = new Date('September 12, 2026 00:00:00').getTime();
+const targetDate = new Date("October 10, 2026 19:00:00").getTime();
 
-function updateCountdown() {
-    const now = new Date().getTime();
-    const difference = targetDate - now;
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const difference = targetDate - now;
 
-    const daysEl = document.getElementById('days');
-    const hoursEl = document.getElementById('hours');
-    const minutesEl = document.getElementById('minutes');
-    const secondsEl = document.getElementById('seconds');
+        if (difference > 0) {
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-    if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
-
-    if (difference > 0) {
-        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-        daysEl.textContent = days < 10 ? '0' + days : days;
-        hoursEl.textContent = hours < 10 ? '0' + hours : hours;
-        minutesEl.textContent = minutes < 10 ? '0' + minutes : minutes;
-        secondsEl.textContent = seconds < 10 ? '0' + seconds : seconds;
-    } else {
-        const container = document.querySelector('.countdown-container');
-        if (container) container.innerHTML = "<h3>The Big Day Has Arrived!</h3>";
+            document.getElementById("days").innerText = String(days).padStart(2, '0');
+            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+        } else {
+            document.querySelector(".countdown-container").innerHTML = "<h3 style='font-family: inherit;'>The Big Day Has Arrived!</h3>";
+        }
     }
-}
 
-setInterval(updateCountdown, 1000);
-updateCountdown();
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
