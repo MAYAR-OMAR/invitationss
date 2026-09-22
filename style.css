@@ -910,3 +910,163 @@ html, body {
 
 
 
+
+/* السكشن المدمج الشامل للصفحة بالكامل */
+#location-closing-section.combined-section {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f7f4ef;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 30px;
+}
+
+/* تنسيق كارد المكان فوق */
+#location-closing-section .location-card {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    width: 90%;
+    max-width: 420px;
+    background: transparent;
+}
+
+#location-closing-section .location-title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+#location-closing-section .dots-divider {
+    font-size: 0.8rem;
+    color: #c5a059;
+    letter-spacing: 2px;
+    margin: -4px 0;
+}
+
+#location-closing-section .venue-image-container {
+    width: 100%;
+    max-height: 150px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+#location-closing-section .venue-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+#location-closing-section .hall-name {
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #2c2c2c;
+    margin: 0;
+}
+
+#location-closing-section .location-btn {
+    display: inline-block;
+    padding: 8px 22px;
+    background: transparent;
+    color: #1a1a1a;
+    font-size: 0.55rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-decoration: none;
+    border: 1px solid #c5a059;
+    border-radius: 25px;
+    margin-top: 4px;
+    transition: all 0.3s ease;
+}
+
+#location-closing-section .location-btn:hover {
+    background: #c5a059;
+    color: #ffffff;
+}
+
+/* محتوى الجملة والـ Monogram في النصف أو فوق الفوانيس بشياكة */
+#location-closing-section .closing-content-over {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    margin-top: 15px;
+}
+
+#location-closing-section .closing-text {
+    font-family: 'Reem Kufi', 'Amiri', serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #2c2c2c;
+    letter-spacing: 1px;
+    margin: 0 0 8px 0;
+}
+
+#location-closing-section .couple-img-container {
+    width: 90px;
+}
+
+#location-closing-section .couple-merged-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* صورة الفوانيس والورد كخلفية أساسية تملى قاع السكشن */
+#location-closing-section .closing-image-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 65%; /* بتخلي الفوانيس تاخد المساحة التحتانية بظبط من غير ما تداري على الخريطة */
+    z-index: 1;
+    pointer-events: none;
+}
+
+#location-closing-section .full-width-lamps {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom center;
+}
+
+
+
+/* Tnsiq zrar Open Location b-el-lon el-bony el-f5m */
+#location-closing-section .location-btn {
+    display: inline-block;
+    padding: 9px 24px;
+    background: #7a5c3e; /* el-lon el-bony el-f5m (momkn t8yryh l-drga aytab wla fat7a brahtk) */
+    color: #ffffff;      /* el-klam ykon abyd 34an yban wad7 w shiek gdn */
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-decoration: none;
+    border: none;
+    border-radius: 25px;
+    margin-top: 6px;
+    box-shadow: 0 4px 12px rgba(122, 92, 62, 0.25);
+    transition: all 0.3s ease;
+}
+
+#location-closing-section .location-btn:hover {
+    background: #634a31; /* drga asmg shwya 3nd el-hover */
+    color: #ffffff;
+}
