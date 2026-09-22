@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-const targetDate = new Date("October 10, 2026 19:00:00").getTime();
+const targetDate = new Date("november 23, 2026 19:00:00").getTime();
 
     function updateCountdown() {
         const now = new Date().getTime();
